@@ -1,0 +1,126 @@
+{
+  "Name": "my",
+  "CreationDate": "2025-11-20",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "file-5-data.csv",
+      "Value": "myTempArray",
+      "Description": ""
+    },
+    {
+      "Command": "times",
+      "Target": "${!csvReadMaxRow}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!times}",
+      "Value": "!csvReadLineNumber",
+      "Description": "اول شماره سطر را مشخص میکنیم"
+    },
+    {
+      "Command": "csvRead",
+      "Target": "file-5-data.csv",
+      "Value": "",
+      "Description": "حالا که شماره سطر عوض شد، دستور خواندن را اجرا میکنیم تا متغیرها آپدیت شوند"
+    },
+    {
+      "Command": "echo",
+      "Target": "Reading Line: ${!csvReadLineNumber} | Content: ${!COL1}",
+      "Value": "blue",
+      "Description": "چاپ شماره خط و محتوای آن برای تست"
+    },
+    {
+      "Command": "click",
+      "Target": "id=imgFromIcon",
+      "Value": "",
+      "Description": "کلیک روی imgFromIcon"
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"ContentPlaceHolder1_txtFomToCard_grdFromCardList\"]/tbody/tr[3]/td[1]",
+      "Value": "",
+      "Description": "انتخاب سطر سوم"
+    },
+    {
+      "Command": "type",
+      "Target": "id=ContentPlaceHolder1_txtFomToCard_txtToCardNo_txtCardNO",
+      "Value": "${!COL1}",
+      "Description": "وارد کردن داده ی قرائت شده در فرم"
+    },
+    {
+      "Command": "type",
+      "Target": "id=ContentPlaceHolder1_txtMab",
+      "Value": "1000000",
+      "Description": "وارد کردن مبلغ ثابت"
+    },
+    {
+      "Command": "click",
+      "Target": "id=ContentPlaceHolder1_btnSubmit",
+      "Value": "",
+      "Description": "کلیک روی دکمه ثبت"
+    },
+    {
+      "Command": "waitForElementVisible",
+      "Target": "xpath=//*[@id=\"ContentPlaceHolder1_lblConfirm\"]/span[1]",
+      "Value": "5000",
+      "Description": "انتظار تا المان ظاهر شود"
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ContentPlaceHolder1_lblConfirm\"]/span[1]",
+      "Value": "value1",
+      "Description": "خواندن اولین span"
+    },
+    {
+      "Command": "storeText",
+      "Target": "xpath=//*[@id=\"ContentPlaceHolder1_lblConfirm\"]/span[2]",
+      "Value": "value2",
+      "Description": "خواندن دومین span"
+    },
+    {
+      "Command": "echo",
+      "Target": "مقدار 1: ${value1}, مقدار 2: ${value2}",
+      "Value": "green",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${!COL1}",
+      "Value": "!csvLine",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${value1}",
+      "Value": "!csvLine",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "${value2}",
+      "Value": "!csvLine",
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=ContentPlaceHolder1_btnCancle",
+      "Value": "",
+      "Description": "کلیک روی دکمه انصراف"
+    },
+    {
+      "Command": "csvSave",
+      "Target": "results.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}
