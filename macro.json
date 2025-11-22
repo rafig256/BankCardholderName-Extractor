@@ -4,7 +4,7 @@
   "Commands": [
     {
       "Command": "csvReadArray",
-      "Target": "file-5-data.csv",
+      "Target": "input-file.csv",
       "Value": "myTempArray",
       "Description": ""
     },
@@ -22,7 +22,7 @@
     },
     {
       "Command": "csvRead",
-      "Target": "file-5-data.csv",
+      "Target": "input-file.csv",
       "Value": "",
       "Description": "حالا که شماره سطر عوض شد، دستور خواندن را اجرا میکنیم تا متغیرها آپدیت شوند"
     },
